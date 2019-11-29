@@ -33,10 +33,10 @@
             "url": "https://github.com/gaoyuexit"
         },
         "donate": {
-            "alipay": "./image/alipay.png",
-            "title": "不留下点钱财💰么",
+            "alipay": "./images/alipay.png",
+            "title": "",
             "button": "点赞",
-            "alipayText": "爱你嗷( ´･ᴗ･` )~"
+            "alipayText": "~( ´･ᴗ･` )~"
         },
         "sharing": {
             "douban": false,
