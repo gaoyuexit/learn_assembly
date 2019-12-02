@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>前言 · Learn assembly language</title>
+        <title>中断 · Learn assembly language</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -69,10 +69,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="汇编学习参考.html" />
+    <link rel="next" href="打印helloword.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="栈.html" />
     
 
     
@@ -151,7 +151,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="前言.html">
+        <li class="chapter " data-level="1.2" data-path="前言.html">
             
                 <a href="前言.html">
             
@@ -320,7 +320,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="中断.html">
+        <li class="chapter active" data-level="1.15" data-path="中断.html">
             
                 <a href="中断.html">
             
@@ -402,7 +402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >前言</a>
+        <a href=".." >中断</a>
     </h1>
 </div>
 
@@ -417,48 +417,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6C47;&#x7F16;-00"><b></b>&#x6C47;&#x7F16;-00</a></li></ul></div><a href="#&#x6C47;&#x7F16;-00" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6C47;&#x7F16;-00"><a name="&#x6C47;&#x7F16;-00" class="anchor-navigation-ex-anchor" href="#&#x6C47;&#x7F16;-00"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6C47;&#x7F16;-00" class="plugin-anchor" href="#&#x6C47;&#x7F16;-00"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6C47;&#x7F16;-00</h1>
-<p>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x5B66;&#x4E60;&#x6C47;&#x7F16;&#x8BED;&#x8A00;:</p>
-<ul>
-<li>&#x900F;&#x8FC7;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x770B;&#x672C;&#x8D28;, &#x7A81;&#x7834;&#x74F6;&#x9888;</li>
-<li>&#x7591;&#x96BE;bug&#x8FFD;&#x8E2A;</li>
-<li>&#x9006;&#x5411;&#x5DE5;&#x7A0B;, &#x53CD;&#x6C47;&#x7F16;(Disassembly)</li>
-</ul>
-<p>&#x6C47;&#x7F16;&#x8BED;&#x8A00;(Assembly language):</p>
-<ol>
-<li>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4E0E;&#x673A;&#x5668;&#x8BED;&#x8A00;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;, &#x6BCF;&#x4E00;&#x6761;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x90FD;&#x6709;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x6C47;&#x7F16;&#x6307;&#x4EE4; (&#x53EF;&#x9006;&#x7684;)</li>
-<li>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x5F97;&#x5230;&#x673A;&#x5668;&#x8BED;&#x8A00;, &#x673A;&#x5668;&#x8BED;&#x8A00;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53CD;&#x6C47;&#x7F16;&#x5F97;&#x5230;&#x6C47;&#x7F16;&#x8BED;&#x8A00;</li>
-<li>&#x901A;&#x8FC7;&#x6C47;&#x7F16;&#x8BED;&#x8A00;, &#x4E0D;&#x80FD;&#x5F97;&#x51FA;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;, &#x56E0;&#x4E3A;&#x5B58;&#x5728;&#x4E8C;&#x4E49;&#x6027;</li>
-</ol>
-<pre><code class="lang-C">
-<span class="hljs-comment">//1</span>
-<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[] = {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>};
-<span class="hljs-comment">//2</span>
-<span class="hljs-keyword">struct</span> Person {
-    <span class="hljs-keyword">int</span> age;
-    <span class="hljs-keyword">int</span> num;
-} per = {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>};
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt"><b></b>&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;(Interrupt)</a></li></ul></div><a href="#&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt"><a name="&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt" class="anchor-navigation-ex-anchor" href="#&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt" class="plugin-anchor" href="#&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;interrupt"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6C47;&#x7F16;-10-&#x4E2D;&#x65AD;(Interrupt)</h1>
+<p><img src="media/15734816224498/Interrupt-01.png" alt="Interrupt-01">
+<img src="media/15734816224498/Interrupt-02.png" alt="Interrupt-02">
+&#x5982;&#x4E0A;&#x56FE;: &#x6309;&#x4E0B;&#x952E;&#x76D8;&#x6309;&#x952E;, &#x4EA7;&#x751F;&#x4E2D;&#x65AD;(interrupt)&#x7535;&#x4FE1;&#x53F7;&#x4F20;&#x9012;&#x7ED9;&#x4E2D;&#x65AD;&#x5904;&#x7406;&#x5668;, &#x4E2D;&#x65AD;&#x5904;&#x7406;&#x5668;&#x544A;&#x8BC9;CPU(Processor), CPU&#x7EC8;&#x6B62;&#x6389;&#x5F53;&#x524D;&#x7684;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;, &#x7136;&#x540E;&#x8C03;&#x7528;<code>do_IRQ()</code>&#x51FD;&#x6570;&#x770B;&#x80FD;&#x5426;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x4E2D;&#x65AD;&#x4E8B;&#x4EF6;, &#x80FD;-&gt;&#x5904;&#x7406;&#x4E2D;&#x65AD;-&gt;&#x56DE;&#x5230;&#x521A;&#x624D;&#x7684;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;, &#x4E0D;&#x80FD;-&gt;&#x56DE;&#x5230;&#x521A;&#x624D;&#x7684;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;</p>
+<p><img src="media/15734816224498/Interrupt-03.png" alt="Interrupt-03">
+<img src="media/15734816224498/15736584311872.jpg" alt="">
+<img src="media/15734816224498/15736584646452.jpg" alt="">
+<img src="media/15734816224498/15736584792274.jpg" alt="">
+<img src="media/15734816224498/Interrupt-04.png" alt="Interrupt-04">
+ ....
+ <img src="media/15734816224498/Interrupt-4c.png" alt="Interrupt-4">
+<img src="media/15734816224498/Interrupt-dos.png" alt="Interrupt-dos">
+//TODO: &#x9644;&#x4E0A;&#x4E2D;&#x65AD;&#x5411;&#x91CF;&#x8868;&#x548C;DOS&#x529F;&#x80FD;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</p>
+<pre><code>assume cs:code
 
-<span class="hljs-comment">//1,2&#x751F;&#x6210;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x662F;&#x4E00;&#x6837;&#x7684;, &#x672C;&#x8D28;&#x90FD;&#x662F;&#x5206;&#x914D;8&#x4E2A;&#x5B57;&#x8282;</span>
-mov  dword ptr [ebp<span class="hljs-number">-8</span>],  <span class="hljs-number">0</span>Ah
-mov  dword ptr [ebp<span class="hljs-number">-4</span>],  <span class="hljs-number">14</span>h
+code segment
+    mov ax, 1122h
+    mov bx, 3344h
+    add ax, bx
+
+    ;&#x4E0B;&#x9762;&#x4E24;&#x53E5;&#x4E3A;&#x6B63;&#x5E38;&#x9000;&#x51FA;&#x7A0B;&#x5E8F;, int&#x8868;&#x793A;&#x4E2D;&#x65AD;
+    mov ax, 4c00h ;&#x901A;&#x8FC7;AH&#x6765;&#x544A;&#x8BC9;&#x8981;&#x8C03;&#x7528;DOS&#x7CFB;&#x7EDF;&#x4EC0;&#x4E48;&#x529F;&#x80FD;
+                  ;AH=4C&#x8868;&#x793A;&#x5E26;&#x8FD4;&#x56DE;&#x7801;&#x7ED3;&#x675F;
+                  ;AL=00&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x7801;&#x4E3A;00
+
+    int 21h       ;&#x4E2D;&#x65AD;,&#x6267;&#x884C;21&#x8C03;&#x7528;DOS&#x7CFB;&#x7EDF;&#x529F;&#x80FD;
+code ends
+
+end
 </code></pre>
-<p>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x7279;&#x70B9;: </p>
-<ul>
-<li>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x3001;&#x63A7;&#x5236;&#x5404;&#x79CD;&#x786C;&#x4EF6;&#x8BBE;&#x5907;&#xFF0C;&#x6BD4;&#x5982;&#x5B58;&#x50A8;&#x5668;&#x3001;CPU&#x7B49;&#xFF0C;&#x80FD;&#x6700;&#x5927;&#x9650;&#x5EA6;&#x5730;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
-<li>&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x662F;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x7684;&#x52A9;&#x8BB0;&#x7B26;,&#x540C;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;&#x6BCF;&#x4E00;&#x79CD;CPU&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x96C6;\&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x6240;&#x4EE5;&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x4E0D;&#x5177;&#x5907;&#x53EF;&#x79FB;&#x690D;&#x6027;</li>
-<li>&#x77E5;&#x8BC6;&#x70B9;&#x8FC7;&#x591A;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x9700;&#x8981;&#x5BF9;CPU&#x7B49;&#x786C;&#x4EF6;&#x7ED3;&#x6784;&#x6709;&#x6240;&#x4E86;&#x89E3;&#xFF0C;&#x4E0D;&#x6613;&#x4E8E;&#x7F16;&#x5199;&#x3001;&#x8C03;&#x8BD5;&#x3001;&#x7EF4;&#x62A4;</li>
-<li>&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x6BD4;&#x5982;mov&#x548C;MOV&#x662F;&#x4E00;&#x6837;&#x7684;</li>
-</ul>
-<p>&#x6C47;&#x7F16;&#x8BED;&#x8A00;&#x79CD;&#x7C7B;:</p>
-<p>8086&#x6C47;&#x7F16;&#xFF08;8086&#x5904;&#x7406;&#x5668;&#x662F;16bit&#x7684;CPU, &#x6240;&#x4EE5;&#x4F5C;&#x4E3A;&#x5165;&#x95E8;&#x5B66;&#x4E60;&#x6700;&#x597D;&#xFF09;
-Win32&#x6C47;&#x7F16;
-Win64&#x6C47;&#x7F16;</p>
-<p>AT&amp;T&#x6C47;&#x7F16;&#xFF08;Mac&#x3001;iOS&#x6A21;&#x62DF;&#x5668;&#xFF09;
-ARM&#x6C47;&#x7F16;&#xFF08;&#x5D4C;&#x5165;&#x5F0F;&#x3001;iOS&#x8BBE;&#x5907;&#xFF09;
-......</p>
-<p>&#x524D;&#x4E09;&#x79CD;&#x4E3A;intel&#x6C47;&#x7F16;</p>
-
                                 
                                 </section>
                             
@@ -485,12 +473,12 @@ ARM&#x6C47;&#x7F16;&#xFF08;&#x5D4C;&#x5165;&#x5F0F;&#x3001;iOS&#x8BBE;&#x5907;&#
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 介绍">
+                <a href="栈.html" class="navigation navigation-prev " aria-label="Previous page: 栈">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="汇编学习参考.html" class="navigation navigation-next " aria-label="Next page: 学习参考">
+                <a href="打印helloword.html" class="navigation navigation-next " aria-label="Next page: 打印helloword">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -501,7 +489,7 @@ ARM&#x6C47;&#x7F16;&#xFF08;&#x5D4C;&#x5165;&#x5F0F;&#x3001;iOS&#x8BBE;&#x5907;&#
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"前言","level":"1.2","depth":1,"next":{"title":"学习参考","level":"1.3","depth":1,"path":"article/汇编学习参考.md","ref":"article/汇编学习参考.md","articles":[]},"previous":{"title":"介绍","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/gaoyuexit"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./images/alipay.png","alipayText":"~( ´･ᴗ･` )~","button":"点赞","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Gaoyu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn assembly language","language":"zh-hans","links":{"sidebar":{"我的小窝":"http://gaoyu.in"}},"gitbook":"3.2.3","description":"记录学习汇编语言的过程"},"file":{"path":"article/前言.md","mtime":"2019-12-02T03:25:32.301Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-02T06:02:50.673Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"中断","level":"1.15","depth":1,"next":{"title":"打印helloword","level":"1.16","depth":1,"path":"article/打印helloword.md","ref":"article/打印helloword.md","articles":[]},"previous":{"title":"栈","level":"1.14","depth":1,"path":"article/栈.md","ref":"article/栈.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/gaoyuexit"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./images/alipay.png","alipayText":"~( ´･ᴗ･` )~","button":"点赞","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Gaoyu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Learn assembly language","language":"zh-hans","links":{"sidebar":{"我的小窝":"http://gaoyu.in"}},"gitbook":"3.2.3","description":"记录学习汇编语言的过程"},"file":{"path":"article/中断.md","mtime":"2019-12-02T03:25:13.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-02T06:02:50.673Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
