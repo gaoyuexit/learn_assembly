@@ -20,7 +20,7 @@
 
 * [寄存器2](article/寄存器2.md)
 
-* [CS/IP寄存器](article/CS/IP寄存器.md)
+* [CS,IP寄存器](article/CS,IP寄存器.md)
 
 * [jmp指令](article/jmp指令.md)
 
