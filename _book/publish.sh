@@ -14,5 +14,6 @@ rm -rf _book
 rm -rf publish.sh
 git add .
 git commit -m 'publish gh-pages'
+git pull origin gh-pages
 git push origin gh-pages
 git checkout master
